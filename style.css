@@ -45,6 +45,11 @@ p {
     font-size: 1rem;
     color: var(--text-dark);
     margin-bottom: 1rem;
+
+}
+img.img-fluid {
+    max-width: 100%;
+    height: auto;
 }
 
 a {
