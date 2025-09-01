@@ -661,10 +661,13 @@ footer {
         align-items: flex-start;
         display: none;
     }
-    .container
-    {
-        padding: 0px;
+    .stats {
+        padding: 0rem 2rem;
     }
+    .section {
+    padding: 2rem 0;
+    }
+   
     .top-bar-info {
         flex-direction: column;
         gap: 0.5rem;
@@ -735,7 +738,7 @@ footer {
         order: -1;
     }
     .stats-container {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(1, 1fr);
     }
     .about-grid {
         grid-template-columns: 1fr;
@@ -744,7 +747,7 @@ footer {
         grid-template-columns: 1fr;
     }
     .quality-features {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(1, 1fr);
     }
     .partner-benefits {
         grid-template-columns: 1fr;
