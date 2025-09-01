@@ -437,7 +437,8 @@ a:hover { color: var(--primary-green); transform: translateY(-2px); }
 
 /* Quality Section */
 .quality {
-    background: var(--primary-blue);
+    background: url('/../novotropicslp/images/midbg.jpg')no-repeat center center/cover;
+    background-color: var(--primary-blue);
     color: var(--text-light);
 }
 .quality-features {
