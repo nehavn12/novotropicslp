@@ -661,6 +661,9 @@ footer {
         align-items: flex-start;
         display: none;
     }
+    #home {
+    padding: 0;
+}
     .stats {
         padding: 0rem 2rem;
     }
