@@ -53,14 +53,34 @@
     </header>
 
     <main>
-        <section id="home" class="section hero">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <img src="images/banner.jpg" alt="Banner" class="img-fluid">
-                    </div>
-                </div>
+       <section id="home" class="section hero">
+        <div class="slider-container">
+            <!-- Slide 1 -->
+            <div class="hero-slide active">
+            <img src="images/banner.jpg" alt="Banner 1" class="img-fluid">
             </div>
+
+            <!-- Slide 2 -->
+            <div class="hero-slide">
+            <img src="images/Banner-1.jpg" alt="Banner 2" class="img-fluid">
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="hero-slide">
+            <img src="images/Banner-2.jpg" alt="Banner 3" class="img-fluid">
+            </div>
+
+            <!-- Controls -->
+            <a class="hero-prev">&#10094;</a>
+            <a class="hero-next">&#10095;</a>
+
+            <!-- Dots -->
+            <div class="hero-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            </div>
+        </div>
         </section>
 
         <section class="stats">
@@ -528,5 +548,39 @@
         });
 
     </script>
+    <script>
+        let heroIndex = 0;
+        const heroSlides = document.querySelectorAll(".hero-slide");
+        const heroDots = document.querySelectorAll(".hero-dots .dot");
+        const prevHero = document.querySelector(".hero-prev");
+        const nextHero = document.querySelector(".hero-next");
+
+        function showHeroSlide(n) {
+            heroSlides.forEach((slide, i) => {
+            slide.classList.remove("active");
+            heroDots[i].classList.remove("active");
+            });
+            heroSlides[n].classList.add("active");
+            heroDots[n].classList.add("active");
+            heroIndex = n;
+        }
+
+        function nextHeroSlide() {
+            heroIndex = (heroIndex + 1) % heroSlides.length;
+            showHeroSlide(heroIndex);
+        }
+
+        function prevHeroSlide() {
+            heroIndex = (heroIndex - 1 + heroSlides.length) % heroSlides.length;
+            showHeroSlide(heroIndex);
+        }
+
+        nextHero.addEventListener("click", nextHeroSlide);
+        prevHero.addEventListener("click", prevHeroSlide);
+        heroDots.forEach((dot, i) => dot.addEventListener("click", () => showHeroSlide(i)));
+
+        // Auto-slide every 5 seconds
+        setInterval(nextHeroSlide, 5000);
+</script>
 </body>
 </html>
