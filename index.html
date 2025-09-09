@@ -190,22 +190,31 @@
 
 <!-- Hidden Form Modal -->
 <div id="formModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%;
-     background:rgba(0,0,0,0.6); display:flex; align-items:center; justify-content:center;">
-  <div style="background:#fff; padding:20px; border-radius:10px; width:320px;">
-    <h3 style="margin-bottom:15px;">Fill Details to Download</h3>
+     background:rgba(0,0,0,0.7); display:flex; align-items:center; justify-content:center; z-index:1000;">
+  <div style="background:#fff; padding:30px; border-radius:16px; width:380px; text-align:center; 
+              box-shadow:0 8px 25px rgba(0,0,0,0.25); animation:fadeIn 0.3s ease;">
+    
+    <h2 style="margin-bottom:20px; color:#00548f; font-weight:700; font-size:22px;">
+      Fill Details to <span style="color:#007bff;">Download</span>
+    </h2>
+    
     <form id="downloadForm">
-      <div style="margin-bottom:10px;">
-        <input type="text" name="name" placeholder="Enter your name" required 
-               style="width:100%; padding:8px;">
+      <div style="margin-bottom:15px;">
+        <input type="text" name="name" placeholder="Enter your name" required
+               style="width:100%; padding:12px; border:1px solid #ccc; border-radius:8px; font-size:15px;">
       </div>
-      <div style="margin-bottom:10px;">
-        <input type="email" name="email" placeholder="Enter your email" required 
-               style="width:100%; padding:8px;">
+      <div style="margin-bottom:20px;">
+        <input type="email" name="email" placeholder="Enter your email" required
+               style="width:100%; padding:12px; border:1px solid #ccc; border-radius:8px; font-size:15px;">
       </div>
-      <button type="submit" class="btn btn-primary" style="width:100%;">Submit & Download</button>
+      <button type="submit" 
+              style="width:100%; background:#007bff; color:#fff; padding:12px; border:none; 
+                     border-radius:8px; font-size:16px; font-weight:600; cursor:pointer;
+                     transition:0.3s;">
+        Submit & Download
+      </button>
     </form>
   </div>
-</div>
 </div>
         </section>
 
@@ -433,7 +442,7 @@
 
     
 <script>
-  // Show form when button clicked
+  // Show modal
   document.getElementById("downloadBtn").addEventListener("click", function() {
     document.getElementById("formModal").style.display = "flex";
   });
@@ -442,12 +451,12 @@
   document.getElementById("downloadForm").addEventListener("submit", function(e) {
     e.preventDefault();
 
-    // Close the form
+    // Close modal
     document.getElementById("formModal").style.display = "none";
 
     // Trigger PDF download
     const link = document.createElement("a");
-    link.href = "Novotropics.pdf";  // PDF path
+    link.href = "Novotropics.pdf";
     link.download = "Novotropics.pdf";
     link.click();
   });
