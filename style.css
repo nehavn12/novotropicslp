@@ -294,7 +294,16 @@ a:hover { color: var(--primary-green); transform: translateY(-2px); }
     animation: fadeInUp 1s ease;
 }
 
+  /* Smooth popup animation */
+  @keyframes fadeIn {
+    from { transform:scale(0.9); opacity:0; }
+    to { transform:scale(1); opacity:1; }
+  }
 
+  /* Hover effect for button */
+  #formModal button:hover {
+    background:#0056b3;
+  }
 
 /* Hero Slider (no text) */
 .slider-container {
